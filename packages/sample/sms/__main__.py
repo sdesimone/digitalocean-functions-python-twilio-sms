@@ -83,48 +83,7 @@ def main(args):
         Returns:
             json body: Json response if the message sent successfully or if an error happened
     '''
-    /*
-    sid = os.getenv('TWILIO_ACCOUNT_SID')
-    token = os.getenv('TWILIO_AUTH_TOKEN')
-    number = args.get("from")
-    user_to = args.get("number")
-    message = args.get("message")
-
-    if not number:
-        return {
-            "statusCode": HTTPStatus.BAD_REQUEST,
-            "body": "no number provided"
-        }
-    if not user_to:
-        return {
-            "statusCode": HTTPStatus.BAD_REQUEST,
-            "body": "no receiver phone number provided"
-        }
-    if not message:
-        return {
-            "statusCode": HTTPStatus.BAD_REQUEST,
-            "body": "no message provided"
-        }
-
-    client = Client(sid, token)
     
-    if valid_number(number, client) and valid_number(user_to, client):
-        msg = client.messages.create(
-            body=message,
-            from_=number,
-            to=user_to
-        )
-        if msg.status != "undelivered" or msg.status != "failed":
-            return {
-                "statusCode": HTTPStatus.ACCEPTED,
-                "body": "success"
-            }
-        code = translate_code(msg.error_code)
-        return {
-            "statusCode": code,
-            "body": msg.error_message
-        }
-    */
     return {
         "statusCode": HTTPStatus.BAD_REQUEST,
         "body": "no twilio verified phone numbers provided"
