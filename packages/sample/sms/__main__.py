@@ -4,6 +4,8 @@ from http import HTTPStatus
 from twilio.base.exceptions import TwilioRestException
 from twilio.rest import Client
 
+from flask import Flask
+app = Flask(__name__)
 
 def translate_code(code):
     '''
@@ -104,6 +106,7 @@ def main(args):
         }
 
     client = Client(sid, token)
+    /*
     if valid_number(number, client) and valid_number(user_to, client):
         msg = client.messages.create(
             body=message,
@@ -120,6 +123,7 @@ def main(args):
             "statusCode": code,
             "body": msg.error_message
         }
+    */
     return {
         "statusCode": HTTPStatus.BAD_REQUEST,
         "body": "no twilio verified phone numbers provided"
