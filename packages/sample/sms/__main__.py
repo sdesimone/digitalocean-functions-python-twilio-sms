@@ -83,6 +83,7 @@ def main(args):
         Returns:
             json body: Json response if the message sent successfully or if an error happened
     '''
+    /*
     sid = os.getenv('TWILIO_ACCOUNT_SID')
     token = os.getenv('TWILIO_AUTH_TOKEN')
     number = args.get("from")
@@ -106,7 +107,7 @@ def main(args):
         }
 
     client = Client(sid, token)
-    /*
+    
     if valid_number(number, client) and valid_number(user_to, client):
         msg = client.messages.create(
             body=message,
